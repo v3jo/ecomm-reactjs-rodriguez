@@ -1,3 +1,4 @@
+import CartWidget from "./CartWidget";
 function NavBar() {
     return (
       <div>
@@ -19,7 +20,7 @@ function NavBar() {
           <a className="nav-link " href="" tabindex="-1" aria-disabled="true">Contacto</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link " href="" tabindex="-1" aria-disabled="true">Carrito</a>
+          <a className="nav-link active" href="" tabindex="-1" aria-disabled="true">Carrito<CartWidget/></a>
         </li>
       </ul>
       <form className="d-flex">
@@ -34,4 +35,6 @@ function NavBar() {
   }
   
   export default NavBar;
+  
+
   
