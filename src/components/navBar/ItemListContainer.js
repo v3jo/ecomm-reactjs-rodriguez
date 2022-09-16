@@ -10,6 +10,10 @@ function ItemListContainer(props) {
   useEffect(() => {
     customFetch(products)
     .then(data=> setListProducts(data))
+    /*fetch('https://api.mercadolibre.com/sites/MLA/search?q=medias')
+    .then(result => result.json())
+    .then(result => setListProducts(result.results))
+    .catch(err => console.log(err))*/
   
 
   },[])

@@ -4,10 +4,11 @@ const Item = ({product})=>{
     console.log(product)
     return(
         <>
-        <div>{product.nombre}</div>
-        <div>{product.precio}</div>
+        <h3><div>{product.nombre}</div></h3>
+        <div><b>{product.precio}</b></div>
         <div>{product.detail}</div>
-        <div>{product.image}</div>
+        <img src={product.img}></img>
+        <br></br>
         </>
     )
 }
