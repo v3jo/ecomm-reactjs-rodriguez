@@ -2,26 +2,29 @@ import React, {useState,useEffect}from "react";
 import products from "./products";
 import {customFetch} from "./customFetch";
 import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
 
-function ItemListContainer(props) {
+function ItemListContainer() {
 
-  const[ListProducts,setListProducts] = useState([])
+  const[ListProducts,setListProducts] = useState([]);
+  const {id}=useParams();
 
   useEffect(() => {
-    customFetch(products)
-    .then(data=> setListProducts(data))
-    /*fetch('https://api.mercadolibre.com/sites/MLA/search?q=medias')
-    .then(result => result.json())
-    .then(result => setListProducts(result.results))
-    .catch(err => console.log(err))*/
+    if(id){
+      customFetch(products.filter(item => item.categoryId===parseInt(id)))
+      .then(data=> setListProducts(data))
+    }else{
+   //mostrar todos los productos-id indefinido
+   customFetch(products)
+   .then(data=> setListProducts(data))
+    }
+    
   
 
-  },[])
+  },[id]);
   
-  console.log(ListProducts)
     return (
       <>
-      <h1>{props.greeting}</h1>
       <div><ItemList ListProducts={ListProducts}/></div>
       </>
     );
@@ -29,3 +32,12 @@ function ItemListContainer(props) {
   
   export default ItemListContainer;
   
+
+
+
+  /*fetch('https://api.mercadolibre.com/sites/MLA/search?q=medias')
+    .then(result => result.json())
+    .then(result => setListProducts(result.results))
+    .catch(err => console.log(err))
+    ----------Usando API de ML---------------------
+    */

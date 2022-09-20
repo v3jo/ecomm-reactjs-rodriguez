@@ -1,7 +1,6 @@
 import React from "react";
 
 const ItemDetail = ({data})=>{
-    console.log(data)
     return(
         <>
         <h3><div>{data.nombre}</div></h3>
