@@ -1,12 +1,11 @@
 import React from "react";
 import { useState, useEffect} from "react";
-const ItemCount = ({initial, stock}) => {
+const ItemCount = ({initial, stock,onAdd}) => {
 
     const[ItemCount, setItemCount] = useState(initial);
-
     const sumar = () =>{
         if (ItemCount<stock){
-            setItemCount(ItemCount + 1);
+            setItemCount(ItemCount+1)
         }
     }
 
@@ -16,10 +15,7 @@ const ItemCount = ({initial, stock}) => {
         }
        
     }
-    const addCart = ()=>{
-        setItemCount(ItemCount);
-        console.log(`add cart ${ItemCount} items`);
-    }
+
 
     useEffect(()=>{
         console.log("ejecute")
@@ -29,7 +25,7 @@ const ItemCount = ({initial, stock}) => {
       <button onClick={()=> sumar()}>+</button>
       <button onClick={()=> restar()}>-</button>
       <span>{ItemCount}</span>
-      <button onClick={()=> addCart()}>Agregar al carrito</button>
+      <button onClick={()=> onAdd(ItemCount)}>Agregar al carrito</button>
       
       </>
     );

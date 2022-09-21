@@ -22,7 +22,6 @@ const ItemDetailContainer = () => {
   return (
     <>
     <ItemDetail data={data}/>
-    <ItemCount initial={1} stock={10}/>
     </>
   )
 }
