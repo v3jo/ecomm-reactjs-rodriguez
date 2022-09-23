@@ -2,13 +2,18 @@ import React from "react";
 import ItemCount from "./ItemCount";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
 
 const ItemDetail = ({data})=>{
 
     const[CountItem, setCountItem] = useState(0);
+    const ctx = useContext(CartContext);
+
     const  onAdd = (cartNumber)=>{
         console.log(`add cart ${cartNumber} items`);
-        setCountItem(cartNumber)
+        setCountItem(cartNumber);
+        ctx.addItem(data, cartNumber);
     
         
     }
@@ -21,7 +26,7 @@ const ItemDetail = ({data})=>{
         <br></br>
         {
             CountItem ===0 
-            ?<ItemCount initial={CountItem} stock={data.stock} onAdd={onAdd}/>
+            ?<ItemCount initial={0} stock={data.stock} onAdd={onAdd}/>
             :<Link to="/cart" type="button" class="btn btn-success">Carrito</Link>
         }
         </>
