@@ -1,4 +1,4 @@
-import CartWidget from "./CartWidget";
+import CartWidget from "./Cart/CartWidget";
 import {Link} from "react-router-dom";
 function NavBar() {
     return (
@@ -30,7 +30,7 @@ function NavBar() {
           <a className="nav-link " href="#" tabindex="-1" aria-disabled="true">Contacto</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link active" href="#" tabindex="-1" aria-disabled="true">Carrito<CartWidget/></a>
+          <Link className="nav-link active" to="/cart" tabindex="-1" aria-disabled="true">Carrito<CartWidget/></Link>
         </li>
       </ul>
       <form className="d-flex">

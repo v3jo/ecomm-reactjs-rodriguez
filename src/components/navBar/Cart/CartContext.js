@@ -10,10 +10,13 @@ const CartContextProvider = ({children}) =>{
         if(isInCart(item.id)){
             setCartList(cartList.map(product =>{
                 return product.id === item.id ? {...product, quantity: product.quantity + quantity} : product
-            }));
+            }))
+           
+            ;
         } else {
             setCartList([...cartList, {...item,quantity}]);
         }
+        console.log(cartList)
     }
 
     const clear =() =>{
@@ -27,8 +30,15 @@ const CartContextProvider = ({children}) =>{
     const isInCart=(id) =>{
         return cartList.find(item => item.id === id) ? true:false;
     }
+
+    const totalPrice = () =>{
+        return cartList.reduce((prev,act) => prev + act.quantity * act.precio, 0);
+    }
+
+    const totalProducts = ()=> cartList.reduce((acumulador, productoActual)=> acumulador + productoActual.quantity, 0);
     return(
-<CartContext.Provider value={{cartList, addItem, clear, removeItem, isInCart}}>
+<CartContext.Provider value={{cartList, addItem, clear, removeItem, isInCart, totalPrice, totalProducts,
+}}>
     {children}
 </CartContext.Provider>
     );
