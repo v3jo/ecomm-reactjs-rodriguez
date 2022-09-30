@@ -14,8 +14,8 @@ function NavBar() {
         <li className="nav-item ">
           <Link className="nav-link active" aria-current="page" to="/">inicio</Link>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="toggle-dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Catalogo
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -27,10 +27,10 @@ function NavBar() {
           </ul>
         </li>
         <li className="nav-item">
-          <a className="nav-link " href="#" tabindex="-1" aria-disabled="true">Contacto</a>
+          <a className="nav-link " href="cambiar" tabIndex="-1" aria-disabled="true">Contacto</a>
         </li>
         <li className="nav-item">
-          <Link className="nav-link active" to="/cart" tabindex="-1" aria-disabled="true">Carrito<CartWidget/></Link>
+          <Link className="nav-link active" to="/cart" tabIndex="-1" aria-disabled="true">Carrito<CartWidget/></Link>
         </li>
       </ul>
       <form className="d-flex">

@@ -22,12 +22,13 @@ const ItemDetail = ({data})=>{
         <h3><div>{data.nombre}</div></h3>
         <div><b>{data.precio}</b></div>
         <div>{data.detail}</div>
-        <img src={data.img}></img>
+        <img src={data.img} alt={data.nombre}></img>
+        <p>{data.stock} productos</p>
         <br></br>
         {
             CountItem ===0 
             ?<ItemCount initial={0} stock={data.stock} onAdd={onAdd}/>
-            :<Link to="/cart" type="button" class="btn btn-success">Terminar Compra</Link>
+            :<Link to="/cart" type="button" className="btn btn-success">Terminar Compra</Link>
         }
         </>
     )
