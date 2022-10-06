@@ -6,7 +6,6 @@ import { getFirestore, doc, getDoc } from '@firebase/firestore';
 const ItemDetailContainer = () => {
     const [data, setData] = useState({})
     const {id}=useParams();
-    console.log(id)
     useEffect(() => {
       if(id){
         const querydb = getFirestore();

@@ -15,7 +15,6 @@ const Cart = () => {
       price: item.precio,
       quantity: item.quantity,
     }));
-    console.log(itemsForDB);
     let order = {
       buyer: {
         name: "messi",

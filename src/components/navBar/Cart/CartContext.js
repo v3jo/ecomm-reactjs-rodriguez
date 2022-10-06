@@ -16,7 +16,6 @@ const CartContextProvider = ({children}) =>{
         } else {
             setCartList([...cartList, {...item,quantity}]);
         }
-        console.log(cartList)
     }
 
     const clear =() =>{

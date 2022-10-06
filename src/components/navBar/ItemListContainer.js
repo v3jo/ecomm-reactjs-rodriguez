@@ -29,7 +29,6 @@ function ItemListContainer() {
         ...item.data()
       }));
       setListProducts(dataFromFirestore)
-      console.log(dataFromFirestore)
       }
 
     }

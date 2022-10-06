@@ -1,5 +1,4 @@
 import NavBar from "./components/navBar/navBar";
-import Section from "./components/section/section";
 import Footer from "./components/Footer/Footer";
 import ItemListContainer from "./components/navBar/ItemListContainer";
 import ItemDetailContainer from "./components/navBar/ItemDetailContainer";
@@ -17,7 +16,6 @@ function app() {
       <Route path="/item/:id" element={<ItemDetailContainer/>}/>
       <Route path="/cart" element={<Cart/>}/>
     </Routes>
-    <Section/>
     <Footer/>
     </BrowserRouter>
     </CartContextProvider>
